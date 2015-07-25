@@ -1,0 +1,51 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+---
+name: kdb+/Q
+scopeName: source.q
+fileTypes: [k,q]
+uuid: 9648a88d-189b-4794-a4d6-2f6d1df1719d
+
+patterns:
+- comment: keywords
+  name: keyword.q
+  match: "\\b(abs|acos|aj|aj0|all|and|any|asc|asin|asof|atan|attr|avg|avgs|bin|binr|ceiling|cols|cor|cos|count|cov|cross|csv|cut|delete|deltas|desc|dev|differ|distinct|div|do|dsave|each|ej|enlist|eval|except|exec|exit|exp|fby|fills|first|fkeys|flip|floor|get|getenv|group|gtime|hclose|hcount|hdel|hopen|hsym|iasc|idesc|if|ij|in|insert|inter|inv|key|keys|last|like|lj|ljf|load|log|lower|lsq|ltime|ltrim|mavg|max|maxs|mcount|md5|mdev|med|meta|min|mins|mmax|mmin|mmu|mod|msum|neg|next|not|null|or|over|parse|peach|pj|plist|prd|prds|prev|prior|rand|rank|ratios|raze|read0|read1|reciprocal|reval|reverse|rload|rotate|rsave|rtrim|save|scan|scov|sdev|select|set|setenv|show|signum|sin|sqrt|ss|ssr|string|sublist|sum|sums|sv|svar|system|tables|tan|til|trim|txf|type|uj|ungroup|union|update|upper|upsert|value|var|view|views|vs|wavg|where|while|within|wj|wj1|wsum|ww|xasc|xbar|xcol|xcols|xdesc|xexp|xgroup|xkey|xlog|xprev|xrank)\\b"
+- comment: keywords
+  name: keyword.q
+  match: "\\.(q|Q)\\.[A-z]+"
+- comment: nulls
+  name: constant.other.q
+  match: "\\b0N(j|i|p|g)?\\b"
+- comment: numerics
+  name: constant.numeric.q
+  match: "(-)?[0-9]+(\\.([0-9])?)?[hij]?\\b"
+- name: string.quoted.double.q
+  begin: '"'
+  end: '"'
+# - name: variable.parameter.q
+#   begin: \{(\s)*\[
+#   end: \]
+# - name: 
+#   match: \{|\}
+- name: comment.line.double-slash.q
+  match: (^| )/(.*)
+- name: entity.name.tag.q
+  match: "`[A-z0-9\\.]*"
+- name: entity.other.inherited-class.q
+  match: "\\.[A-z0-9]+\\b"
+- name: invalid.illegal.q
+  match: ^\\(.*)
+- name: keyword.operator.q
+  match: "(\\,|\\~|\\$|\\!|\\+|\\@)"
+- name: keyword.control.q
+  match: ":"
+
+# - name: meta.group.braces.square
+#   begin: \[
+#   end: \]
+
+# - name: meta.group.braces.curly
+#   begin: \{
+#   end: \}
+
+...
+
